@@ -1335,3 +1335,142 @@ main .footer .credit {
   }
 }
 /*# sourceMappingURL=style.css.map */
+
+/* ========== Desktop: no scroll, right-aligned content ========== */
+@media (min-width: 992px) {
+  html, body {
+    height: 100vh;
+    overflow: hidden; /* disable page scroll on desktop */
+  }
+  main.main-06 {
+    min-height: 100vh;
+  }
+  main .main-wrapper.demo-06 .hero-area {
+    margin-bottom: 0;
+  }
+  .hero-area .container {
+    min-height: 100vh; /* fill full viewport */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; /* vertically center content */
+  }
+  .hero-area .row {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; /* split two panes */
+  }
+  .two-pane > .col-lg-6 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .two-pane > [class*="col-"] {
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .left-pane {
+    padding-right: 16px;
+    padding-top: 10px;
+    position: relative;
+    z-index: 2; /* keep logo above */
+    overflow-x: hidden; /* prevent right overflow */
+    overflow-y: visible;
+  }
+  .right-pane {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: relative;
+    z-index: 1;
+    padding-left: 36px; /* shift text a bit right but keep room */
+  }
+  .right-pane .right-content {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    overflow-y: auto; /* scroll only inner content */
+    -webkit-overflow-scrolling: touch;
+    padding-top: 10px; /* top to bottom fill */
+    padding-bottom: 40px; /* breathing room at bottom */
+  }
+  .left-pane .brand-line {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; /* allow icon to wrap under title if tight */
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    max-width: 100%;
+  }
+  .left-pane .brand-line h1 {
+    white-space: nowrap;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: clamp(20px, 2.2vw, 36px); /* further shrink brand line */
+    line-height: 1.1;
+  }
+  .left-pane .brand-line .brand-gun {
+    height: 44px; /* further smaller to avoid overflow/wrapping */
+    max-width: 100%;
+    -ms-flex-negative: 1;
+        flex-shrink: 1;
+    margin-left: 16px;
+    vertical-align: middle;
+    object-fit: contain;
+  }
+  /* Ensure countdown and heading never overflow horizontally */
+  .left-pane .heading,
+  .left-pane .heading h1,
+  .left-pane .countdown {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .left-pane .heading h1 {
+    font-size: clamp(22px, 3.2vw, 56px); /* smaller heading */
+    line-height: 1.02;
+    word-break: break-word;
+  }
+  .left-pane .countdown .single-count-content .count {
+    font-size: clamp(16px, 2vw, 32px); /* smaller countdown numbers */
+  }
+  .left-pane .countdown .single-count-content .text {
+    font-size: clamp(10px, 1vw, 12px); /* smaller labels */
+  }
+  .left-pane .countdown {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .left-pane .countdown .single-count-content {
+    padding: 0 16px; /* tighter spacing between countdown items */
+  }
+}
